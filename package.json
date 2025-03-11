@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "@stacks/connect": "^8.1.6"
+    "@stacks/connect": "^8.1.6",
+    "@stacks/transactions": "^7.0.5",
+    "lucide-react": "^0.479.0"
   }
 }
