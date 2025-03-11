@@ -1,10 +1,8 @@
-// Input to our function
 interface FetchAddressTransactionsArgs {
     address: string;
     offset?: number;
   }
   
-  // Output from our function
   export interface FetchAddressTransactionsResponse {
     limit: number;
     offset: number;
@@ -21,7 +19,6 @@ interface FetchAddressTransactionsArgs {
     }>;
   }
   
-  // Intermediary types of transactions we get from Hiro's APIs
   interface BaseTransaction {
     tx_id: string;
     nonce: number;
@@ -82,4 +79,20 @@ interface FetchAddressTransactionsArgs {
     transfer: number;
     mint: number;
     burn: number;
+  }
+  
+  export async function fetchAddressTransactions({
+    address,
+    offset = 0,
+  }: FetchAddressTransactionsArgs): Promise<FetchAddressTransactionsResponse> {
+    const url = `https://api.hiro.so/extended/v2/addresses/${address}/transactions?limit=20&offset=${offset}`;
+  
+    const response = await fetch(url);
+  
+    if (!response.ok) {
+      throw new Error("Failed to fetch address transactions");
+    }
+  
+    const data = await response.json();
+    return data as FetchAddressTransactionsResponse;
   }
