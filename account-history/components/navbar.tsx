@@ -37,15 +37,15 @@ export function Navbar() {
   }
 
   return (
-    <nav className="flex w-full items-center justify-between gap-4 p-4 h-16 border-b border-gray-500">
-      <Link href="/" className="text-2xl font-bold">
+    <nav className="flex w-full items-center justify-between gap-4 p-4 h-16 text-gray-900">
+      <Link href="/" className="text-xl font-bold">
         Stacks Account History
       </Link>
 
       <input
         type="text"
         placeholder="SP..."
-        className="w-96 rounded-lg bg-gray-700  px-4 py-2 text-sm"
+        className="w-96 rounded-lg bg-gray-200  px-4 py-2 text-sm"
         onChange={(e) => setSearchAddress(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -65,14 +65,14 @@ export function Navbar() {
               onClick={() =>
                 router.push(`/${userData.profile.stxAddress.mainnet}`)
               }
-              className="rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:ring-offset-2"
             >
               View {abbreviateAddress(userData.profile.stxAddress.mainnet)}
             </button>
             <button
               type="button"
               onClick={disconnectWallet}
-              className="rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:ring-offset-2"
             >
               Disconnect
             </button>
@@ -81,7 +81,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={connectWallet}
-            className="rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:ring-offset-2"
           >
             Connect Wallet
           </button>

@@ -38,7 +38,7 @@ export function TransactionsList({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col border rounded-md divide-y border-gray-800 divide-gray-800">
+      <div className="flex flex-col border rounded-md divide-y border-blue-950 divide-blue-950">
         {allTxns.results.map((tx) => (
           <div key={tx.tx.tx_id}>
             <TransactionDetail result={tx} />
@@ -47,7 +47,7 @@ export function TransactionsList({
       </div>
       <button
         type="button"
-        className="px-4 py-2 rounded-lg w-fit border border-gray-800 mx-auto text-center hover:bg-gray-900 transition-all"
+        className="px-4 py-2 rounded-lg w-fit mx-auto text-center bg-blue-950 hover:bg-blue-800 transition-all"
         onClick={loadMoreTxns}
       >
         Load More
